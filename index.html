@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mid Cap Analyst</title>
+  <meta name="description" content="Learn how to judge an Indian mid cap stock by its numbers, not the hype.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23142849'/%3E%3Crect x='7' y='17' width='4.5' height='8' rx='1' fill='%23BFE0FF'/%3E%3Crect x='13.75' y='12' width='4.5' height='13' rx='1' fill='%235AA9EE'/%3E%3Crect x='20.5' y='7' width='4.5' height='18' rx='1' fill='%23FF3D9A'/%3E%3C/svg%3E">
+  <!-- Fonts (Newsreader for headings, IBM Plex Sans for text). Without internet, backup fonts are used. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Thin line at the very top that fills up as you read a module -->
+  <div class="read-progress" id="read-progress" hidden><span></span></div>
+
+  <!-- Top bar with the main links. On phones the links fold into a "Menu" button. -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#/">
+        <svg class="brand-mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="17" width="5" height="10" rx="1"/><rect x="13.5" y="11" width="5" height="16" rx="1"/><rect x="22" y="5" width="5" height="22" rx="1"/></svg>
+        Mid Cap Analyst
+      </a>
+      <button class="menu-btn" type="button" data-action="toggle-menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="menu-word">Menu</span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <a href="#/" data-nav="home" style="--i:0">Home</a>
+        <a href="#/modules" data-nav="modules" style="--i:1">Modules</a>
+        <a href="#/quizzes" data-nav="quizzes" style="--i:2">Quizzes</a>
+        <a href="#/simulation" data-nav="simulation" style="--i:3">Simulation</a>
+        <a href="#/glossary" data-nav="glossary" style="--i:4">Glossary</a>
+        <span class="nav-indicator" aria-hidden="true"></span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Every page is drawn inside this box by app.js -->
+  <main id="app" class="page" tabindex="-1">
+    <noscript><p>This website needs JavaScript turned on.</p></noscript>
+  </main>
+
+  <!-- Pop-up boxes (like "Once locked, you cannot change your picks") appear here -->
+  <div id="modal-root"></div>
+
+  <!-- Content files (all the words and numbers) -->
+  <script src="data/modules.js"></script>
+  <script src="data/quiz.js"></script>
+  <script src="data/companies.js"></script>
+  <script src="data/prices.js"></script>
+  <script src="data/glossary.js"></script>
+  <!-- The logic that runs the website -->
+  <script src="app.js"></script>
+</body>
+</html>
