@@ -14,6 +14,31 @@
    Anything still set to "TBD" shows "Data coming soon" on the card.
    Search this file for "FILL IN" to find every value still missing.
 
+   DRAFT values: the flag counts and reveal texts for the 8 simulation
+   companies are drafts. Search for "DRAFT" to check or change them.
+   The counts use only what is on the card, with these rules taken
+   from Modules 3, 4 and 5:
+
+     Green flags (one each):
+       - 3 year sales AND profit growth both over 15%
+       - operating profit margin over 20%
+       - debt to equity under 1
+       - positive cash from operations
+       - ROE over 20%
+     Red flags (one each):
+       - cash from operations negative or under half of net profit
+       - PE over 30 with 3 year profit growth under 15%
+       - promoter selling mentioned in the notes
+       - 3 year sales or profit growth under 5%
+       - net profit fell from FY25 to FY26
+
+   NOT checked, because the card does not show them: auditors,
+   subsidiaries, loans to promoters, dilution, contingent liabilities,
+   tax rate, receivables and inventory. Add these from Screener if you
+   want fuller counts.
+   Reveal texts name the ratios to look at, followed by your teaching
+   point. They do not prove why a price moved.
+
    notes: optional extra information shown in small text under a
    value on the card. Possible notes: debtToEquity, netProfit,
    cashFromOperations, promoter.
@@ -58,9 +83,9 @@ const COMPANIES = [
     // Still to fill in
     dataAsOf: "TBD", // FILL IN: date these numbers are from
     industryPE: "TBD", // FILL IN: industry PE
-    greenFlags: "TBD", // FILL IN: number of green flags
-    redFlags: "TBD", // FILL IN: number of red flags
-    revealText: "TBD" // FILL IN: the 2 or 3 ratios that explain the price move
+    greenFlags: 3, // DRAFT, please check: low debt, positive cash, ROE over 20%
+    redFlags: 0, // DRAFT, please check: none found on the card
+    revealText: "Ratios to look at: debt to equity 0.04, dividend yield 3.67%, 3 year sales growth 12%. No debt and good payout but poor sales growth over 5 years (9%)." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -97,9 +122,9 @@ const COMPANIES = [
     // Still to fill in
     dataAsOf: "TBD", // FILL IN: date these numbers are from
     industryPE: "TBD", // FILL IN: industry PE
-    greenFlags: "TBD", // FILL IN: number of green flags
-    redFlags: "TBD", // FILL IN: number of red flags
-    revealText: "TBD" // FILL IN: the 2 or 3 ratios that explain the price move
+    greenFlags: 2, // DRAFT, please check: low debt, positive cash
+    redFlags: 3, // DRAFT, please check: high PE with slowing growth, low growth, profits fell in FY26
+    revealText: "Ratios to look at: PE 36.6, ROE 11.2%, 3 year profit growth -4%. Profits dropped 27% in FY26. Received a USFDA Form 483 in October 2026." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -136,9 +161,9 @@ const COMPANIES = [
     // Still to fill in
     dataAsOf: "TBD", // FILL IN: date these numbers are from
     industryPE: "TBD", // FILL IN: industry PE
-    greenFlags: "TBD", // FILL IN: number of green flags
-    redFlags: "TBD", // FILL IN: number of red flags
-    revealText: "TBD" // FILL IN: the 2 or 3 ratios that explain the price move
+    greenFlags: 3, // DRAFT, please check: margin over 20%, low debt, positive cash
+    redFlags: 1, // DRAFT, please check: high PE with slowing growth
+    revealText: "Ratios to look at: PE 53.0, ROE 14.7%, 3 year profit growth 10%. Fast growing but expensive (PE 53). 7.4 times book." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -178,9 +203,9 @@ const COMPANIES = [
     // Still to fill in
     dataAsOf: "TBD", // FILL IN: date these numbers are from
     industryPE: "TBD", // FILL IN: industry PE
-    greenFlags: "TBD", // FILL IN: number of green flags
-    redFlags: "TBD", // FILL IN: number of red flags
-    revealText: "TBD" // FILL IN: the 2 or 3 ratios that explain the price move
+    greenFlags: 4, // DRAFT, please check: growth over 15%, margin over 20%, low debt, ROE over 20%
+    redFlags: 1, // DRAFT, please check: profit but no cash
+    revealText: "Ratios to look at: cash from operations -2,891 crore against net profit of 2,583 crore, PE 27.2, ROE 30.4%. Made profit but not cash." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -217,9 +242,9 @@ const COMPANIES = [
     // Still to fill in
     dataAsOf: "TBD", // FILL IN: date these numbers are from
     industryPE: "TBD", // FILL IN: industry PE
-    greenFlags: "TBD", // FILL IN: number of green flags
-    redFlags: "TBD", // FILL IN: number of red flags
-    revealText: "TBD" // FILL IN: the 2 or 3 ratios that explain the price move
+    greenFlags: 4, // DRAFT, please check: growth over 15%, margin over 20%, low debt, positive cash
+    redFlags: 0, // DRAFT, please check: none found on the card
+    revealText: "Ratios to look at: operating profit margin 33%, PE 55.4, ROE 14.2%. Best margins but expensive (8.2 times book). PE 55." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -259,9 +284,9 @@ const COMPANIES = [
     // Still to fill in
     dataAsOf: "TBD", // FILL IN: date these numbers are from
     industryPE: "TBD", // FILL IN: industry PE
-    greenFlags: "TBD", // FILL IN: number of green flags
-    redFlags: "TBD", // FILL IN: number of red flags
-    revealText: "TBD" // FILL IN: the 2 or 3 ratios that explain the price move
+    greenFlags: 3, // DRAFT, please check: margin over 20%, low debt, positive cash
+    redFlags: 0, // DRAFT, please check: none found on the card
+    revealText: "Ratios to look at: PE 23.3, debt to equity 0.40, 3 year profit growth 48%. Cyclical business with beta of 1.8." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -298,9 +323,9 @@ const COMPANIES = [
     // Still to fill in
     dataAsOf: "TBD", // FILL IN: date these numbers are from
     industryPE: "TBD", // FILL IN: industry PE
-    greenFlags: "TBD", // FILL IN: number of green flags
-    redFlags: "TBD", // FILL IN: number of red flags
-    revealText: "TBD" // FILL IN: the 2 or 3 ratios that explain the price move
+    greenFlags: 3, // DRAFT, please check: margin over 20%, low debt, positive cash
+    redFlags: 2, // DRAFT, please check: cash under half of profit, low growth
+    revealText: "Ratios to look at: debt to equity 0.00, 3 year sales growth -3%, ROCE 21.1%. No debt but sales are going down. Exactly at the mid cap cut off." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -409,7 +434,7 @@ const COMPANIES = [
       promoter: "government, down from 66.1% after OFS in August 2026"
     },
     // Reference only (not shown in the app)
-    priceOn23Oct2026: "458",
+    priceOn23Oct2026: "458", // actual close on 23 Oct was 399.05; 458.45 was the 16 Oct close
     week52High: "760",
     week52Low: "308.5",
     oneYearReturn: "+34",
@@ -417,9 +442,9 @@ const COMPANIES = [
     // Still to fill in
     dataAsOf: "TBD", // FILL IN: date these numbers are from
     industryPE: "TBD", // FILL IN: industry PE
-    greenFlags: "TBD", // FILL IN: number of green flags
-    redFlags: "TBD", // FILL IN: number of red flags
-    revealText: "TBD" // FILL IN: the 2 or 3 ratios that explain the price move
+    greenFlags: 5, // DRAFT, please check: growth over 15%, margin over 20%, low debt, positive cash, ROE over 20%
+    redFlags: 1, // DRAFT, please check: promoter selling
+    revealText: "Ratios to look at: ROE 32.9%, operating profit margin 48%, PE 36.7. Doubled profits due to copper prices. Cyclical. Government sold 6%." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */

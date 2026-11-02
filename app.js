@@ -204,6 +204,13 @@ function showFigure(value) {
   return html;
 }
 
+// Shows a share price with 2 decimals, e.g. 4819.9 -> "4,819.90"
+function showPrice(value) {
+  const number = toNumber(value);
+  if (number === null) return showValue(value);
+  return number.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
 // Rounds a number to a set number of decimal places (e.g. roundTo(9.456, 2) = 9.46)
 function roundTo(number, places) {
   const factor = Math.pow(10, places);
@@ -1425,7 +1432,7 @@ function companyCardHtml(company, pick, index) {
     ["Sector", showValue(company.sector)],
     ["Data as of (date)", showValue(company.dataAsOf)],
     ["Market cap (Rs crore)", showFigure(company.marketCap)],
-    ["Share price on 1 June 2026 (Rs)", showFigure(price.startPrice)],
+    ["Share price on 1 June 2026 (Rs)", showPrice(price.startPrice)],
     ["PE", showFigure(company.pe)],
     ["Industry PE", showFigure(company.industryPE)],
     ["ROE %", showFigure(company.roe)],
@@ -1672,6 +1679,8 @@ function calculateSimulation(picks) {
       const valuePaise = shares * endPaise;
       const profitPaise = valuePaise + rowLeftoverPaise - amountPaise;
       row.ready = true;
+      row.startPrice = startPrice;
+      row.endPrice = endPrice;
       row.shares = shares;
       row.leftover = rowLeftoverPaise / 100;
       row.value = valuePaise / 100;
@@ -1840,10 +1849,20 @@ function renderSimReveal(sim) {
 
   // Each card is unveiled from the top, one after another
   const cards = calc.rows.map(function (row, i) {
+    // The real share price move over the simulation period
+    let moveHtml = "";
+    if (row.ready) {
+      const change = ((row.endPrice - row.startPrice) / row.startPrice) * 100;
+      moveHtml =
+        '<p class="reveal-label">Share price move</p>' +
+        '<p class="reveal-text">' + formatRupees(row.startPrice) + " on 1 June 2026 to " + formatRupees(row.endPrice) + " on 23 October 2026 " +
+          '<strong class="' + gainClass(change) + '">(' + formatPercent(change, true) + ")</strong></p>";
+    }
     return '<article class="reveal-card" data-reveal="unveil" style="--i:' + Math.min(i, 3) + '">' +
       "<h2>" + escapeHtml(row.name) + "</h2>" +
       '<p class="reveal-label">Your sentence</p>' +
       '<p class="reveal-quote">' + escapeHtml(row.reason) + "</p>" +
+      moveHtml +
       '<p class="reveal-label">What explains the price move</p>' +
       '<p class="reveal-text">' + showValue(row.revealText) + "</p>" +
       '<p class="reveal-flags">' + icon("flag", 18) + "Red flags: " + showValue(row.redFlags) + "</p>" +
