@@ -14,6 +14,15 @@
    Anything still set to "TBD" shows "Data coming soon" on the card.
    Search this file for "FILL IN" to find every value still missing.
 
+   1 JUNE 2026 VALUES: for the 8 simulation companies, everything price
+   based on the card shows what was known on the 1 June 2026 buying date:
+     Market cap     = shares (from Screener) x 1 June close
+     PE             = 1 June close / FY26 EPS (from Screener)
+     Dividend yield = your October yield x your October price / 1 June close
+     Promoter %     = before later sales (Hindustan Copper sold in August
+                      2026, Lodha in late June 2026)
+   Your original October numbers are kept under "Reference only".
+
    DRAFT values: the flag counts and reveal texts for the 8 simulation
    companies are drafts. Search for "DRAFT" to check or change them.
    The counts use only what is on the card, with these rules taken
@@ -27,8 +36,8 @@
        - ROE over 20%
      Red flags (one each):
        - cash from operations negative or under half of net profit
-       - PE over 30 with 3 year profit growth under 15%
-       - promoter selling mentioned in the notes
+       - PE over 30 on 1 June with 3 year profit growth under 15%
+       - promoter selling on or before 1 June mentioned in the notes
        - 3 year sales or profit growth under 5%
        - net profit fell from FY25 to FY26
 
@@ -57,8 +66,8 @@ const COMPANIES = [
     nseCode: "HEROMOTOCO",
     sector: "2 Wheelers",
     inSimulation: true,
-    marketCap: "1,01,011",
-    pe: "18.2",
+    marketCap: "96,476",
+    pe: "16.8",
     roe: "28.1",
     roce: "35.2",
     debtToEquity: "0.04",
@@ -72,20 +81,24 @@ const COMPANIES = [
     cashFromOperationsFY26: "8,315",
     promoterHolding: "34.7",
     promoterPledge: "0",
-    dividendYield: "3.67",
+    dividendYield: "3.84",
     notes: {},
     // Reference only (not shown in the app)
+    marketCapOctober: "1,01,011",
+    peOctober: "18.2",
+    dividendYieldOctober: "3.67",
+    epsFY26: "286.96",
     priceOn23Oct2026: "5,047",
     week52High: "6,390",
     week52Low: "4,672",
     oneYearReturn: "-9",
     teachingPoint: "No debt and good payout but poor sales growth over 5 years (9%).",
     // Still to fill in
-    dataAsOf: "TBD", // FILL IN: date these numbers are from
+    dataAsOf: "1 June 2026",
     industryPE: "TBD", // FILL IN: industry PE
     greenFlags: 3, // DRAFT, please check: low debt, positive cash, ROE over 20%
     redFlags: 0, // DRAFT, please check: none found on the card
-    revealText: "Ratios to look at: debt to equity 0.04, dividend yield 3.67%, 3 year sales growth 12%. No debt and good payout but poor sales growth over 5 years (9%)." // DRAFT, please check
+    revealText: "Ratios to look at: debt to equity 0.04, dividend yield 3.84% on 1 June, 3 year sales growth 12%. No debt and good payout but poor sales growth over 5 years (9%)." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -96,8 +109,8 @@ const COMPANIES = [
     nseCode: "DRREDDY",
     sector: "Pharma",
     inSimulation: true,
-    marketCap: "1,02,624",
-    pe: "36.6",
+    marketCap: "1,07,675",
+    pe: "25.7",
     roe: "11.2",
     roce: "13.0",
     debtToEquity: "0.20",
@@ -111,20 +124,24 @@ const COMPANIES = [
     cashFromOperationsFY26: "5,674",
     promoterHolding: "26.6",
     promoterPledge: "0",
-    dividendYield: "0.65",
+    dividendYield: "0.62",
     notes: {},
     // Reference only (not shown in the app)
+    marketCapOctober: "1,02,624",
+    peOctober: "36.6",
+    dividendYieldOctober: "0.65",
+    epsFY26: "50.27",
     priceOn23Oct2026: "1,230",
     week52High: "1,415",
     week52Low: "1,080",
     oneYearReturn: "-4",
     teachingPoint: "Profits dropped 27% in FY26. Received a USFDA Form 483 in October 2026.",
     // Still to fill in
-    dataAsOf: "TBD", // FILL IN: date these numbers are from
+    dataAsOf: "1 June 2026",
     industryPE: "TBD", // FILL IN: industry PE
     greenFlags: 2, // DRAFT, please check: low debt, positive cash
-    redFlags: 3, // DRAFT, please check: high PE with slowing growth, low growth, profits fell in FY26
-    revealText: "Ratios to look at: PE 36.6, ROE 11.2%, 3 year profit growth -4%. Profits dropped 27% in FY26. Received a USFDA Form 483 in October 2026." // DRAFT, please check
+    redFlags: 2, // DRAFT, please check: low growth, profits fell in FY26
+    revealText: "Ratios to look at: PE 25.7 on 1 June (36.6 by 23 October), ROE 11.2%, 3 year profit growth -4%. Profits dropped 27% in FY26. Received a USFDA Form 483 in October 2026." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -135,8 +152,8 @@ const COMPANIES = [
     nseCode: "MAXHEALTH",
     sector: "Hospitals",
     inSimulation: true,
-    marketCap: "79,325",
-    pe: "53.0",
+    marketCap: "91,335",
+    pe: "63.3",
     roe: "14.7",
     roce: "14.7",
     debtToEquity: "0.32",
@@ -150,20 +167,24 @@ const COMPANIES = [
     cashFromOperationsFY26: "1,633",
     promoterHolding: "23.7",
     promoterPledge: "0",
-    dividendYield: "0.25",
+    dividendYield: "0.22",
     notes: {},
     // Reference only (not shown in the app)
+    marketCapOctober: "79,325",
+    peOctober: "53.0",
+    dividendYieldOctober: "0.25",
+    epsFY26: "14.82",
     priceOn23Oct2026: "815",
     week52High: "1,196",
     week52Low: "797",
     oneYearReturn: "-31",
     teachingPoint: "Fast growing but expensive (PE 53). 7.4 times book.",
     // Still to fill in
-    dataAsOf: "TBD", // FILL IN: date these numbers are from
+    dataAsOf: "1 June 2026",
     industryPE: "TBD", // FILL IN: industry PE
     greenFlags: 3, // DRAFT, please check: margin over 20%, low debt, positive cash
     redFlags: 1, // DRAFT, please check: high PE with slowing growth
-    revealText: "Ratios to look at: PE 53.0, ROE 14.7%, 3 year profit growth 10%. Fast growing but expensive (PE 53). 7.4 times book." // DRAFT, please check
+    revealText: "Ratios to look at: PE 63.3 on 1 June (53.0 by 23 October), ROE 14.7%, 3 year profit growth 10%. Fast growing but expensive. 7.4 times book by 23 October." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -174,8 +195,8 @@ const COMPANIES = [
     nseCode: "MAZDOCK",
     sector: "Defence Shipbuilding (PSU)",
     inSimulation: true,
-    marketCap: "77,691",
-    pe: "27.2",
+    marketCap: "97,743",
+    pe: "37.8",
     roe: "30.4",
     roce: "35.9",
     debtToEquity: "0.05",
@@ -189,23 +210,27 @@ const COMPANIES = [
     cashFromOperationsFY26: "-2,891",
     promoterHolding: "81.2",
     promoterPledge: "0",
-    dividendYield: "0.94",
+    dividendYield: "0.72",
     notes: {
       cashFromOperations: "FY25 was plus 2,078 cr",
       promoter: "government"
     },
     // Reference only (not shown in the app)
+    marketCapOctober: "77,691",
+    peOctober: "27.2",
+    dividendYieldOctober: "0.94",
+    epsFY26: "64.04",
     priceOn23Oct2026: "1,860",
     week52High: "2,882",
     week52Low: "1,845",
     oneYearReturn: "-34",
     teachingPoint: "Made profit but not cash.",
     // Still to fill in
-    dataAsOf: "TBD", // FILL IN: date these numbers are from
+    dataAsOf: "1 June 2026",
     industryPE: "TBD", // FILL IN: industry PE
     greenFlags: 4, // DRAFT, please check: growth over 15%, margin over 20%, low debt, ROE over 20%
     redFlags: 1, // DRAFT, please check: profit but no cash
-    revealText: "Ratios to look at: cash from operations -2,891 crore against net profit of 2,583 crore, PE 27.2, ROE 30.4%. Made profit but not cash." // DRAFT, please check
+    revealText: "Ratios to look at: cash from operations -2,891 crore against net profit of 2,583 crore, PE 37.8 on 1 June (27.2 by 23 October), ROE 30.4%. Made profit but not cash." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -216,8 +241,8 @@ const COMPANIES = [
     nseCode: "INDHOTEL",
     sector: "Hotels",
     inSimulation: true,
-    marketCap: "1,11,277",
-    pe: "55.4",
+    marketCap: "92,094",
+    pe: "44.2",
     roe: "14.2",
     roce: "17.1",
     debtToEquity: "0.22",
@@ -231,20 +256,24 @@ const COMPANIES = [
     cashFromOperationsFY26: "2,471",
     promoterHolding: "38.1",
     promoterPledge: "0",
-    dividendYield: "0.42",
+    dividendYield: "0.51",
     notes: {},
     // Reference only (not shown in the app)
+    marketCapOctober: "1,11,277",
+    peOctober: "55.4",
+    dividendYieldOctober: "0.42",
+    epsFY26: "14.64",
     priceOn23Oct2026: "782",
     week52High: "795",
     week52Low: "565",
     oneYearReturn: "+6",
     teachingPoint: "Best margins but expensive (8.2 times book). PE 55.",
     // Still to fill in
-    dataAsOf: "TBD", // FILL IN: date these numbers are from
+    dataAsOf: "1 June 2026",
     industryPE: "TBD", // FILL IN: industry PE
     greenFlags: 4, // DRAFT, please check: growth over 15%, margin over 20%, low debt, positive cash
     redFlags: 0, // DRAFT, please check: none found on the card
-    revealText: "Ratios to look at: operating profit margin 33%, PE 55.4, ROE 14.2%. Best margins but expensive (8.2 times book). PE 55." // DRAFT, please check
+    revealText: "Ratios to look at: operating profit margin 33%, PE 44.2 on 1 June (55.4 by 23 October), ROE 14.2%. Best margins but expensive (8.2 times book by 23 October)." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -255,8 +284,8 @@ const COMPANIES = [
     nseCode: "LODHA",
     sector: "Real Estate",
     inSimulation: true,
-    marketCap: "96,251",
-    pe: "23.3",
+    marketCap: "89,205",
+    pe: "26.0",
     roe: "16.2",
     roce: "16.9",
     debtToEquity: "0.40",
@@ -268,25 +297,30 @@ const COMPANIES = [
     profitGrowth3Years: "48",
     operatingProfitMargin: "28",
     cashFromOperationsFY26: "7,120",
-    promoterHolding: "70.3",
+    promoterHolding: "72.3",
     promoterPledge: "0",
-    dividendYield: "0.4",
+    dividendYield: "0.43",
     notes: {
       debtToEquity: "Net debt Rs 5,380 cr",
       cashFromOperations: "operating cashflow per the company's Q4 FY26 presentation"
     },
     // Reference only (not shown in the app)
+    marketCapOctober: "96,251",
+    peOctober: "23.3",
+    dividendYieldOctober: "0.4",
+    epsFY26: "34.32",
+    promoterHoldingOctober: "70.3", // promoters sold about 2% in late June 2026
     priceOn23Oct2026: "963",
     week52High: "1,345",
     week52Low: "651",
     oneYearReturn: "-18",
     teachingPoint: "Cyclical business with beta of 1.8.",
     // Still to fill in
-    dataAsOf: "TBD", // FILL IN: date these numbers are from
+    dataAsOf: "1 June 2026",
     industryPE: "TBD", // FILL IN: industry PE
     greenFlags: 3, // DRAFT, please check: margin over 20%, low debt, positive cash
     redFlags: 0, // DRAFT, please check: none found on the card
-    revealText: "Ratios to look at: PE 23.3, debt to equity 0.40, 3 year profit growth 48%. Cyclical business with beta of 1.8." // DRAFT, please check
+    revealText: "Ratios to look at: PE 26.0 on 1 June (23.3 by 23 October), debt to equity 0.40, 3 year profit growth 48%. Cyclical business with beta of 1.8." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -297,8 +331,8 @@ const COMPANIES = [
     nseCode: "AIAENG",
     sector: "Industrial Castings",
     inSimulation: true,
-    marketCap: "33,401",
-    pe: "26.3",
+    marketCap: "42,209",
+    pe: "33.2",
     roe: "17.0",
     roce: "21.1",
     debtToEquity: "0.00",
@@ -312,20 +346,24 @@ const COMPANIES = [
     cashFromOperationsFY26: "592",
     promoterHolding: "58.5",
     promoterPledge: "0",
-    dividendYield: "0.45",
+    dividendYield: "0.36",
     notes: {},
     // Reference only (not shown in the app)
+    marketCapOctober: "33,401",
+    peOctober: "26.3",
+    dividendYieldOctober: "0.45",
+    epsFY26: "136.11",
     priceOn23Oct2026: "3,579",
     week52High: "5,180",
     week52Low: "3,220",
     oneYearReturn: "+7",
     teachingPoint: "No debt but sales are going down. Exactly at the mid cap cut off.",
     // Still to fill in
-    dataAsOf: "TBD", // FILL IN: date these numbers are from
+    dataAsOf: "1 June 2026",
     industryPE: "TBD", // FILL IN: industry PE
     greenFlags: 3, // DRAFT, please check: margin over 20%, low debt, positive cash
-    redFlags: 2, // DRAFT, please check: cash under half of profit, low growth
-    revealText: "Ratios to look at: debt to equity 0.00, 3 year sales growth -3%, ROCE 21.1%. No debt but sales are going down. Exactly at the mid cap cut off." // DRAFT, please check
+    redFlags: 3, // DRAFT, please check: cash under half of profit, high PE with slowing growth, low growth
+    revealText: "Ratios to look at: debt to equity 0.00, 3 year sales growth -3%, ROCE 21.1%. No debt but sales are going down. By 23 October its market cap was exactly at the mid cap cut off." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
@@ -414,8 +452,8 @@ const COMPANIES = [
     nseCode: "HINDCOPPER",
     sector: "Copper Mining (PSU)",
     inSimulation: true,
-    marketCap: "44,333",
-    pe: "36.7",
+    marketCap: "52,195",
+    pe: "56.8",
     roe: "32.9",
     roce: "42.4",
     debtToEquity: "0.03",
@@ -427,24 +465,30 @@ const COMPANIES = [
     profitGrowth3Years: "50",
     operatingProfitMargin: "48",
     cashFromOperationsFY26: "1,474",
-    promoterHolding: "60.1",
+    promoterHolding: "66.1",
     promoterPledge: "0",
-    dividendYield: "0.62",
+    dividendYield: "0.53",
     notes: {
-      promoter: "government, down from 66.1% after OFS in August 2026"
+      promoter: "government"
     },
     // Reference only (not shown in the app)
+    marketCapOctober: "44,333",
+    peOctober: "36.7",
+    dividendYieldOctober: "0.62",
+    epsFY26: "9.50",
+    promoterHoldingOctober: "60.1",
+    promoterNoteOctober: "government, down from 66.1% after OFS in August 2026",
     priceOn23Oct2026: "458", // actual close on 23 Oct was 399.05; 458.45 was the 16 Oct close
     week52High: "760",
     week52Low: "308.5",
     oneYearReturn: "+34",
     teachingPoint: "Doubled profits due to copper prices. Cyclical. Government sold 6%.",
     // Still to fill in
-    dataAsOf: "TBD", // FILL IN: date these numbers are from
+    dataAsOf: "1 June 2026",
     industryPE: "TBD", // FILL IN: industry PE
     greenFlags: 5, // DRAFT, please check: growth over 15%, margin over 20%, low debt, positive cash, ROE over 20%
-    redFlags: 1, // DRAFT, please check: promoter selling
-    revealText: "Ratios to look at: ROE 32.9%, operating profit margin 48%, PE 36.7. Doubled profits due to copper prices. Cyclical. Government sold 6%." // DRAFT, please check
+    redFlags: 0, // DRAFT, please check: none found on the card (the government sale came after 1 June)
+    revealText: "Ratios to look at: ROE 32.9%, operating profit margin 48%, PE 56.8 on 1 June (36.7 by mid October). Doubled profits due to copper prices. Cyclical. Government sold 6% in August 2026." // DRAFT, please check
   },
 
   /* ---------------------------------------------------------- */
